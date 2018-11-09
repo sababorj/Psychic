@@ -10,10 +10,10 @@ var userGuess = [];
 function randomLetter() {
     return ('abcdefghijklmnopqrstuvwxyz').split('')[Math.floor(Math.random() * 26) + 1]
 };
-
+var compGuess = randomLetter();
 // When user press any key game will run
 document.onkeyup = function (event) {
-    var compGuess = randomLetter();
+    
     Guessleft--;
     userGuess.push(event.key);
     document.getElementById("guesses").innerHTML = ` ${userGuess.join()}`;
@@ -33,6 +33,7 @@ document.onkeyup = function (event) {
         document.getElementById("win").innerHTML = ` ${win}`;
         document.getElementById("guesses").innerHTML = "";
         document.getElementById("Gleft").innerHTML = ` ${Guessleft}`;
+        compGuess = randomLetter();
 
         // losing path
     } else if (userGuess[(userGuess.length) - 1] !== compGuess && Guessleft === 0) {
@@ -45,5 +46,6 @@ document.onkeyup = function (event) {
         document.getElementById("Gleft").innerHTML = ` ${Guessleft}`;
         document.getElementById("guesses").innerHTML = "";
         document.getElementById("lose").innerHTML = ` ${lose}`;
+        compGuess = randomLetter();
     }
 }

@@ -8,7 +8,7 @@ var userGuess = [];
 
 // General function which makes random letter
 function randomLetter() {
-    return ('abcdefghijklmnopqrstuvwxyz').split('')[Math.floor(Math.random() * 26) + 1]
+    return 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26) + 1]
 };
 var compGuess = randomLetter();
 // When user press any key game will run
